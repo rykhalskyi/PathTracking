@@ -20,9 +20,6 @@ namespace PathTracking
             CheckPoints.Add(new CheckPoint(30, 50));
             CheckPoints.Add(new CheckPoint(60, 50));
             CheckPoints.Add(new CheckPoint(80, 20));
-
-            foreach (var checkpoint in CheckPoints)
-            { checkpoint.DrawCheckPoint(); }
         }
 
         private ICommand _drawVesselCommand = null;

@@ -83,7 +83,21 @@
                       Stroke="Aqua"
                       StrokeThickness="1"
                       Data="{Binding Ship.Content}"/>
-
+              <ItemsControl ItemsSource="{Binding CheckPoints}">
+                <ItemsControl.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <Grid/>
+                  </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Path Stretch="Fill"
+                          Stroke="Yellow"
+                          StrokeThickness="1"
+                          Data="{Binding Content}"/>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
 
             </Grid>
         </Border>
