@@ -25,6 +25,7 @@ namespace PathTracking
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }

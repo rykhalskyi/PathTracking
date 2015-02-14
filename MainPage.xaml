@@ -7,12 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Border HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 BorderBrush="White"
                 BorderThickness="2"
-                Name="MainBorder">
+                Name="MainBorder"
+                Grid.Column="0">
             <Grid MaxWidth="{Binding ElementName=MainBorder, Path=ActualHeight}"
                   HorizontalAlignment="Left">
                 <Path Stretch="Fill"
@@ -73,8 +79,28 @@
                         M 85,0 L 85,100
                         M 95,0 L 95,100
                         M 0,100 L 100,100" />
-                
+                <Path Stretch="Fill"
+                      Stroke="Aqua"
+                      StrokeThickness="1"
+                      Data="{Binding Ship.Content}"/>
+
+
             </Grid>
         </Border>
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="1"
+                    Margin="20,20">
+            <Button Content="Draw"
+                    Command="{Binding DrawVesselCommand}"
+                    HorizontalAlignment="Center"/>
+            <Button Content="Move"
+                    Margin="0,20"
+                    Command="{Binding MoveCommand}"
+                    HorizontalAlignment="Center"/>
+            <Button Content="Rotate"
+                    Margin="0,20,0,0"
+                    Command="{Binding RotateCommand}"
+                    HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Page>
